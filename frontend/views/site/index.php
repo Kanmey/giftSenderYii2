@@ -33,8 +33,6 @@ use yii\helpers\Html; ?>
                     <div style="color:#999;margin:1em 0">
                         Если вы забыли пароль вы можете его <?= Html::a('сбросить', ['site/request-password-reset']) ?>.
                         <br>
-                        Не удалось подтвердить свой е-мейл- <?= Html::a('повторить отправку кода', ['site/resend-verification-email']) ?>
-                        <br>
                         Нет аккаунта? <?= Html::a('зарегистрируйся', ['site/signup']) ?>.
                     </div>
 
@@ -45,7 +43,6 @@ use yii\helpers\Html; ?>
                     <?php ActiveForm::end(); ?>
                 </div>
             </div>
-
 
 
         </div>

@@ -6,23 +6,24 @@ namespace common\models;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 
-class Gift  extends ActiveRecord
+class Gift extends ActiveRecord
 {
 
     public static function getRandomGift()
     {
-        return  static::find()
-            ->where(['>','count' , 1])
+        return static::find()
+            ->where(['>', 'count', 1])
             ->orderBy(new Expression('rand()'))
             ->one();
     }
 
-    public static function removeFromStok($id){
+    public static function removeFromStok($id)
+    {
 
-        $model=static::find()
-            ->where(['id' =>$id ])
+        $model = static::find()
+            ->where(['id' => $id])
             ->one();
-        if($model!=null) {
+        if ($model != null) {
             $model->count -= 1;
             $model->save();
         }

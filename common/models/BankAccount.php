@@ -6,15 +6,16 @@ namespace common\models;
 
 use yii\db\ActiveRecord;
 
-class BankAccount  extends ActiveRecord
+class BankAccount extends ActiveRecord
 {
 
     public function __construct()
     {
     }
+
     public static function getBankAccount()
     {
-        return  BankAccount::find()
+        return BankAccount::find()
             ->where(['activity' => 1])
             ->one();
     }
@@ -23,7 +24,6 @@ class BankAccount  extends ActiveRecord
     {
         return '{{%bank_account}}';
     }
-
 
 
 }

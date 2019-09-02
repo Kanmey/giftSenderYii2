@@ -11,14 +11,17 @@ use yii\db\ActiveRecord;
 class UserHelper extends ActiveRecord
 {
 
-    public static function isReceivedGift(){
-        $model= User::find()
+    public static function isReceivedGift()
+    {
+        $model = User::find()
             ->where(['id' => Yii::$app->user->getId()])
             ->one();
         return $model->getgift;
     }
-    public static function receiveGift(){
-        $model= User::find()
+
+    public static function receiveGift()
+    {
+        $model = User::find()
             ->where(['id' => Yii::$app->user->getId()])
             ->one();
         $model->getgift;
